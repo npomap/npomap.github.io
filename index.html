@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>NPO Map: Mapping community non-profit resources</title>
     
+    <!-- Google Maps API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=TRUE"></script>
+    <script type="text/javascript">
+      var geocoder;
+        var map;
+        function initialize() {
+          geocoder = new google.maps.Geocoder();
+          var latlng = new google.maps.LatLng(-34.397, 150.644);
+          var mapOptions = {
+            zoom: 8,
+            center: latlng
+          }
+          map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        }
+    </script>
+    
     <!-- AngularJS -->
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
@@ -57,9 +73,9 @@
             </div>
           </form>
           
-          <form class="navbar-form navbar-right" role="search" ng-submit="updateMap()" novalidate>
+          <form class="navbar-form navbar-right" role="search" ng-submit="codeAddress()" novalidate>
             <div ng-class="form-group" class="form-group">
-              <input type="text" class="form-control" placeholder="Enter address">
+              <input type="text" class="form-control" placeholder="Enter address" ng-model="formData.address" id="address">
             </div>
             <button type="submit" class="btn btn-default">Find</button>
           </form>
@@ -69,20 +85,6 @@
     </nav>
     
     {{formData.category}}
-    
-    <!-- Google Maps API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=TRUE"></script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
     
     <div id="map-canvas"/>
     

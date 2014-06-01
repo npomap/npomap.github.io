@@ -39,7 +39,7 @@ NPOMapApp.controller('NPOMapAppCtrl', function($scope) {
             
             for (var i in mapArray) {
                 var thislatlng = new google.maps.LatLng(mapArray[i]['Latitude'], mapArray[i]['Longitude']),
-                contentString = mapArray[i]['Name'] + '<br />' + mapArray[i]['Address'],
+                contentString = mapArray[i]['Name'] + '<br />' + mapArray[i]['Address'] + '<br /><a href="rate.html">Rate this service</a>',
                 marker = new google.maps.Marker({
                     map: map,
                     position: thislatlng,

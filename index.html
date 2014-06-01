@@ -73,6 +73,9 @@
         </div>
         
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+          </ul>
           <form class="navbar-form navbar-left" role="form">
             <div ng-class="form-group" class="form-group">
               <select ng-model="formData.category" ng-change="placePins()" name="category" id="category" class="form-control select2-allow-clear" placeholder="Select service">
@@ -92,7 +95,7 @@
         
       </div>
     </nav>
-    {{foo}}
+    
     <div id="map-canvas"/>
     
     </div>

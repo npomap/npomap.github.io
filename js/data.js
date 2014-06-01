@@ -9,7 +9,7 @@ data = {'education': [
       "GeographicArea":"Lincoln Park",
       "Latitude":41.84967486,
       "Longitude":-87.62535151,
-      "Location":"(41.8496748576, -87.6253515103)"
+      "Location":"(41.933784, -87.655831)"
     },
     {
       "SchoolID":400012,
